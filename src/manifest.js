@@ -1,7 +1,3 @@
-const EXTENSION_NAME = "";
-const EXTENSION_DESCRIPTION = "";
-const EXTENSION_VERSION = "";
-
 const fs = require("fs");
 
 const packageJsonText = fs.readFileSync("../package.json");
@@ -10,9 +6,9 @@ const packageJson = JSON.parse(packageJsonText);
 const manifest = {
 
     "manifest_version": 2,
-    "name": EXTENSION_NAME || packageJson.name,
-    "description": EXTENSION_DESCRIPTION || packageJson.description,
-    "version": EXTENSION_VERSION || packageJson.version,
+    "name": packageJson.longName || "package.json is missing a name",
+    "description": packageJson.description || "package.json is missing a description",
+    "version": packageJson.version,
 
     "browser_action": {
         "default_icon": {
@@ -21,7 +17,7 @@ const manifest = {
             "48": "icons/icon48.png",
             "64": "icons/icon64.png"
         },
-        "default_title": EXTENSION_NAME || packageJson.name,
+        "default_title": packageJson.longName,
         "default_popup": "popup.html"
     },
 

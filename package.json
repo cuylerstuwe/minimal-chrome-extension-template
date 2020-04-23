@@ -1,7 +1,10 @@
 {
+  "author": "Cuyler Stuwe",
   "name": "minimal-chrome-extension-boilerplate",
+  "longName": "Minimal Chrome Extension Boilerplate",
   "version": "1.0.0",
   "description": "",
+  "license": "Private",
   "main": "index.js",
   "scripts": {
     "copy-verbatim-directories": "mkdir -p ./dist/icons && cd ./src && cp -R icons ../dist/",
@@ -10,8 +13,6 @@
     "build": "npx webpack && gulp copy-verbatim-directories && npm run copy-verbatim-files && npm run render-manifest-from-package-json",
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
