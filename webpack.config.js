@@ -4,6 +4,7 @@ module.exports = {
     entry: {
         background: "./src/background/background.js",
         popup: "./src/popup/popup.js",
+        content: "./src/content/content.js"
     },
     module: {
         rules: [{

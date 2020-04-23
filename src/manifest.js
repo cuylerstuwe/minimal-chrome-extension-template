@@ -23,7 +23,14 @@ const manifest = {
 
     "background": {
         "page": "background.html"
-    }
+    },
+
+    "content_scripts": [
+        {
+            matches: ["<all_urls>"], // TODO: Make this more specific, rather than the template default of matching everything.
+            js: ["content.js"]
+        }
+    ]
 
 };
 
